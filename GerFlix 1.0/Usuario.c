@@ -32,6 +32,16 @@ void inicializarUsuariosHardCode(eUsuario usuarios[])
 
     }
 
+   void mostrarListaUsuarios(eUsuario usuarios[], int TAMUSUARIO)
+{
+    int i;
+    for(i=0; i<TAMUSUARIO; i++)
+    {
+        if(usuarios[i].estado != 0)
+        {
+            printf(" %d | %s\n", usuarios[i].idUsuario, usuarios[i].nombre);
+        }
+    }
 
 
 
