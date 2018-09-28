@@ -41,13 +41,10 @@ void inicializarUsuariosHardCode(eUsuario usuarios[])
         {
             printf(" %d | %s\n", usuarios[i].idUsuario, usuarios[i].nombre);
         }
+
+
+
     }
 
-
-
-
-
-
-
-
+}
 }

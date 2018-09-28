@@ -41,7 +41,8 @@ void inicializarSeriesHardCode(eSerie series[])
 
 
     }
-void mostrarListaSeries(eSerie series[], int cant)
+
+   void mostrarListaSeries(eSerie series[], int cant)
 {
     int i;
     printf("%5s %20s %5s %s\n","idSerie","Nombre","Genero","Cantidad de Temporadas");
@@ -54,23 +55,10 @@ void mostrarListaSeries(eSerie series[], int cant)
             printf("%5d %20s %5s %d\n", series[i].idSerie, series[i].nombre, series[i].genero, series[i].cantidadTemporadas);
         }
     }
-}
-    void mostrarListaUsuarios(eUsuario usuarios[], int TAMUSUARIO)
-{
-    int i;
-    for(i=0; i<TAMUSUARIO; i++)
-    {
-        if(usuarios[i].estado != 0)
-        {
-            printf(" %d | %s\n", usuarios[i].idUsuario, usuarios[i].nombre);
-        }
-    }
 
 }
 
 }
-
-
 
 
 
