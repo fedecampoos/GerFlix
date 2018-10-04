@@ -19,8 +19,6 @@ void inicializarUsuariosHardCode(eUsuario usuarios[])
 
     int serie[15] = {100,100,101,101,102,100,100,103,101,102,103,101,100,100,101};
 
-
-
     int i;
 
     for(i=0; i<15; i++)
@@ -32,19 +30,62 @@ void inicializarUsuariosHardCode(eUsuario usuarios[])
 
     }
 
-   void mostrarListaUsuarios(eUsuario usuarios[], int TAMUSUARIO)
-{
-    int i;
-    for(i=0; i<TAMUSUARIO; i++)
-    {
-        if(usuarios[i].estado != 0)
-        {
-            printf(" %d | %s\n", usuarios[i].idUsuario, usuarios[i].nombre);
-        }
-
-
-
-    }
 
 }
+
+void mostrarListaUsuarios(eUsuario usuarios[], int t)
+{
+    int i;
+    for (i=0; i<t; i++)
+    {
+        if(usuarios[i].estado==1)
+        {
+            printf("%d  %s  %d\n",usuarios[i].idUsuario, usuarios[i].nombre,usuarios[i].idSerie);
+        }
+    }
+}
+
+void mostrarUsuarioConSuSerie(eUsuario usuarios[], int tamU, eSerie series[], int tamS)
+{
+    int i;
+    int j;
+    for(i=0; i<tamU; i++)
+    {
+        for(j=0; j<tamS;j++)
+        {
+            if(usuarios[i].idSerie==series[j].idSerie)
+            {
+                if(usuarios[i].estado==1)
+                {
+                    printf("%d  %s  %d %s  %s  %d\n",usuarios[i].idUsuario, usuarios[i].nombre,usuarios[i].idSerie, series[j].nombre, series[j].genero,series[j].cantidadTemporadas);
+                    break;
+                }
+
+            }
+        }
+    }
+}
+
+
+void mostrarSerieConSuUsuario(eSerie series[], int tamS, eUsuario usuarios[], int tamU)
+{
+    int i;
+    int j;
+    for(i=0; i<tamS; i++)
+    {
+        for(j=0; j<tamU;j++)
+        {
+            if(series[i].idSerie==usuarios[j].idSerie)
+            {
+                if(series[i].estado==1)
+                {
+                    printf("%d %s  %s  %d  %d  %s \n",usuarios[j].idSerie, series[i].nombre, series[i].genero,series[i].cantidadTemporadas,usuarios[j].idUsuario, usuarios[j].nombre);
+                    break;
+                }
+
+            }
+
+        }
+
+    }
 }

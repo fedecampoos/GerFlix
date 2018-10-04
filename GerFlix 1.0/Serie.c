@@ -2,15 +2,6 @@
 #include "Serie.h"
 #include <string.h>
 
-/*
-    int idSerie;
-    char nombre[50];
-    char genero[20];
-    int cantidadTemporadas;
-    int estado;
-
-*/
-
 void inicializarSeriesEstado(eSerie series[], int cant)
 {
     int i;
@@ -31,6 +22,9 @@ void inicializarSeriesHardCode(eSerie series[])
 
     int i;
 
+
+
+
     for(i=0; i<5; i++)
     {
         series[i].idSerie=id[i];
@@ -38,27 +32,22 @@ void inicializarSeriesHardCode(eSerie series[])
         series[i].estado = 1;
         strcpy(series[i].nombre, nombre[i]);
         strcpy(series[i].genero, genero[i]);
-
-
     }
+}
 
-   void mostrarListaSeries(eSerie series[], int cant)
+
+void mostrarListaSeries(eSerie series[], int t)
 {
     int i;
-    printf("%5s %20s %5s %s\n","idSerie","Nombre","Genero","Cantidad de Temporadas");
-
-
-    for(i=0; i<cant; i++)
+    for(i=0; i<t; i++)
     {
-        if(series[i].estado==1)
+        if (series[i].estado==1)
         {
-            printf("%5d %20s %5s %d\n", series[i].idSerie, series[i].nombre, series[i].genero, series[i].cantidadTemporadas);
+            printf("%d  %s  %s  %d\n",series[i].idSerie,series[i].nombre,series[i].genero,series[i].cantidadTemporadas);
         }
     }
-
 }
 
-}
 
 
 
